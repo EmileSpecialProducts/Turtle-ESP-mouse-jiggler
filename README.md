@@ -6,8 +6,8 @@ Mouse jiggler of the ESP USB and BLE
 *This example turns the ESP32 into a Bluetooth LE mouse and USB that continuously moves the mouse.
 
   
-|Supported |BLE |USB
-|--|--|--|
+||Supported |BLE |USB
+|--|--|--|--|
 |ESP32| Yes| Yes| No
 |ESP32-S2| Yes| No| Yes
 |ESP32-S3| Yes| Yes| Yes
