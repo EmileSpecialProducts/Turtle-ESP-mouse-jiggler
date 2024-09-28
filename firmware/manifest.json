@@ -1,0 +1,56 @@
+{
+  "name": "Thurtle BLE / USB Mouse",
+  "version": "2024.09.28",
+  "home_assistant_domain": "Thrtle",
+  "funding_url": "https://github.com/EmileSpecialProducts/Thurtle-ESP-mouse-jiggler/",
+  "builds": [
+    {
+      "chipFamily": "ESP32",
+      "parts": [
+        { "path": "./esp32_dio/bootloader.bin", "offset": 4096 },
+        { "path": "./esp32_dio/partitions.bin", "offset": 32768 },
+        { "path": "./esp32_dio/boot_app0.bin", "offset": 57344 },
+        { "path": "./esp32_dio/firmware.bin", "offset": 65536 }
+      ]
+    },
+    {
+      "chipFamily": "ESP32-C3",
+      "parts": [
+        { "path": "./esp32c3_dio/bootloader.bin", "offset": 0 },
+        { "path": "./esp32c3_dio/partitions.bin", "offset": 32768 },
+        { "path": "./esp32c3_dio/boot_app0.bin", "offset": 57344 },
+        { "path": "./esp32c3_dio/firmware.bin", "offset": 65536 }
+      ]
+    },
+    {
+      "chipFamily": "ESP32-S2",
+      "parts": [
+        { "path": "./esp32s2_dio/bootloader.bin", "offset": 4096 },
+        { "path": "./esp32s2_dio/partitions.bin", "offset": 32768 },
+        { "path": "./esp32s2_dio/boot_app0.bin", "offset": 57344 },
+        { "path": "./esp32s2_dio/firmware.bin", "offset": 65536 }
+      ]
+    },
+    {
+      "chipFamily": "ESP32-S3",
+      "parts": [
+        { "path": "./esp32s3_dio/bootloader.bin", "offset": 0 },
+        { "path": "./esp32s3_dio/partitions.bin", "offset": 32768 },
+        { "path": "./esp32s3_dio/boot_app0.bin", "offset": 57344 },
+        { "path": "./esp32s3_dio/firmware.bin", "offset": 65536 }
+      ]
+    },
+    {
+      "chipFamily": "ESP32-C6",
+      "parts": [
+        { "path": "./esp32c6_dio/merged.bin", "offset": 0 }
+      ]
+    },
+    {
+      "chipFamily": "ESP32-H2",
+      "parts": [
+        { "path": "./esp32h2_dio/merged.bin", "offset": 0 }
+      ]
+    }
+  ]
+}

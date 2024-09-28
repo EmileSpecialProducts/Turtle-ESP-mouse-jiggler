@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESP Web tool</title>
+    <script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"></script>
+        <style>
+            table {
+                font-family: arial, sans-serif;
+                border-collapse: collapse;
+                
+            }
+        
+            td,
+            th {
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 8px;
+            }
+        
+            tr:nth-child(even) {
+                background-color: #dddddd;
+            }
+        </style>
+</head>
+<body>
+    <div>
+        <h2>This will program the Turtle-ESP-mouse-jiggler software to the ESP device
+        The folowing devices are supported.
+        </h2>
+        <table>
+            <tr>
+                <th>Device</th>
+                <th>Supported</th>
+                <th>BLE</th>
+                <th>USB</th>
+            </tr>
+            <tr>
+                <td>ESP32</td>
+                <td>Yes</td>
+                <td>Yes</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td>ESP32-S2</td>
+                <td>Yes</td>
+                <td>No</td>
+                <td>Yes</td>
+            </tr>
+            <tr>
+                <td>ESP32-S3</td>
+                <td>Yes</td>
+                <td>Yes</td>
+                <td>Yes</td>
+            </tr>
+            <tr>
+                <td>ESP32-C2/ESP8684(H2/H4)</td>
+                <td>Notyet</td>
+                <td>Yes</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td>ESP32-C3</td>
+                <td>Yes</td>
+                <td>Yes</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td>ESP32-C5</td>
+                <td>Notyet</td>
+                <td>Yes</td>
+                <td>Yes</td>
+            </tr>
+            <tr>
+                <td>ESP32-C6</td>
+                <td>Yes*</td>
+                <td>Yes</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td>ESP32-C61</td>
+                <td>Notyet</td>
+                <td>Yes</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td>ESP32-H2</td>
+                <td>Yes*</td>
+                <td>Yes</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td>ESP32-H4</td>
+                <td>Notyet</td>
+                <td>Yes</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td>ESP8266</td>
+                <td>No</td>
+                <td>No</td>
+                <td>No</td>
+            </tr>
+        </table>
+        <p>*Yes is supported by Arduino but not yet by Platformio 2024-09</p>
+        <p>*Notyet is not yet supported as i do not have the Chip or Platform software 2024-09</p>
+        <br>
+    </div>
+    <dif>
+    <esp-web-install-button manifest="./manifest.json">       
+    </esp-web-install-button>
+    </dif>
+    <br>
+    <br>
+    <div>
+        You can find the Github at <a href="https://github.com/EmileSpecialProducts/Turtle-ESP-mouse-jiggler">this</a> location
+    </div>
+    <div>
+        You can find the ESPWebTool information at <a href="https://esphome.github.io/esp-web-tools/">this</a> location 
+    </div>
+</esp-web-install-button>
+</body>
+</html>
