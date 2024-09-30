@@ -24,14 +24,6 @@ ESP8266                      No           No     No
 #include <rom/rtc.h>
 #endif
 
-#if defined(CONFIG_IDF_TARGET_ESP32S2) || defined(CONFIG_IDF_TARGET_ESP32S3)
-#define FULL_USB_SUPPORT
-#endif
-
-#if defined(CONFIG_IDF_TARGET_ESP32S3)
-#define BLE_SUPPORT
-#endif
-
 #if defined(CONFIG_TINYUSB_ENABLED)
 #include "USBHID.h"
 #endif
@@ -163,12 +155,12 @@ void setup()
     default:
       message += String(ESP.getFlashChipMode());
   }
-#if not(defined(CONFIG_IDF_TARGET_ESP32H2) || defined(CONFIG_IDF_TARGET_ESP32C6))
+
+#if ESP_ARDUINO_VERSION_MAJOR <= 2
   message += " Mac: ";
   uint8_t mac[6];
  // esp_efuse_mac_get_default(mac);
-  esp_base_mac_addr_get(mac);
- 
+  esp_base_mac_addr_get(mac); 
   for (byte i = 0; i < 6; ++i)
   {
     char buf[3];
@@ -182,15 +174,16 @@ void setup()
 #if not defined(ESP8266)
       message += " reset_reason: " + reset_reason(rtc_get_reset_reason(0));
 #endif
-
-  message += " Build Date: " + String(__DATE__ " " __TIME__ "\n\r");
-  Serial.print(message);
+      message += " ESP_ARDUINO_VERSION: " + String(ESP_ARDUINO_VERSION_MAJOR) + "." + String(ESP_ARDUINO_VERSION_MINOR) + "." + String(ESP_ARDUINO_VERSION_PATCH);
+      message += " Build Date: " + String(__DATE__ " " __TIME__ "\n\r");
+      Serial.print(message);
 }
 
 int Seconds;
 int CurrentSeconds;
 int Minutes;
 int CurrentMinutes;
+bool BLEConnection = false;
 
 void loop()
 {
@@ -201,6 +194,18 @@ void loop()
   {
     Seconds = CurrentSeconds;
     CurrentMinutes = Seconds / 60;
+#if defined(CONFIG_BT_BLE_ENABLED)
+    if (BLEConnection && !bleMouse->isConnected())
+    {
+      Serial.println("BLE DISConnected");
+      BLEConnection = false;
+    }
+    if (!BLEConnection && bleMouse->isConnected())
+    {
+      Serial.println("BLE Connected");
+      BLEConnection = true;
+    }
+#endif
     if (Minutes != CurrentMinutes)
     {
       Minutes = CurrentMinutes;
