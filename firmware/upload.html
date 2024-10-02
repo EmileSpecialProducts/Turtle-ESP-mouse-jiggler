@@ -44,7 +44,7 @@
             </tr>
             <tr>
                 <td>ESP32-S2</td>
-                <td>Yes</td>
+                <td>Yes#</td>
                 <td>No</td>
                 <td>Yes</td>
             </tr>
@@ -103,8 +103,9 @@
                 <td>No</td>
             </tr>
         </table>
-        <p>*Yes is supported by Arduino but not yet by Platformio 2024-09</p>
+        <p>*Yes is supported by Arduino V3.X but not yet by Platformio Arduino V2.X 2024-09</p>
         <p>*Notyet is not yet supported as i do not have the Chip or Platform software 2024-09</p>
+        <p>#Yes But you will need to use <a href="./S2upload.html">this</a> 8.0.6 Webtool instaler as the 10.0.1 does not work on the S2 board.
         <br>
     </div>
     <dif>
@@ -121,8 +122,13 @@
         location
     </div>
     <div>
-        You can find the ESPWebTool information at <a href="https://esphome.github.io/esp-web-tools/">this</a> location 
+        You can find the ESPWebTool information at <a href="https://esphome.github.io/esp-web-tools/">this</a> location or the <a href="https://github.com/esphome/esp-web-tools/">GitHub</a>
     </div>
-
+    <div>
+        The ESPWebTool is based on the <a href="https://github.com/espressif/esptool-js">esptool-js</a>
+    </div>
+    <div>
+        You can find a Serial monitor at <a href="https://www.serialterminal.com/">this</a> location
+    </div>
 </body>
 </html>
