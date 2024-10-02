@@ -1,6 +1,6 @@
 {
   "name": "Thurtle BLE / USB Mouse",
-  "version": "2024.09.28",
+  "version": "2024.10.02",
   "home_assistant_domain": "Thrtle",
   "funding_url": "https://github.com/EmileSpecialProducts/Thurtle-ESP-mouse-jiggler/",
   "builds": [
