@@ -97,16 +97,18 @@ String reset_reason(int reason)
 
 void setup()
 {
-  char strTurtleName[] = "Turtle ESP";
+  char strTurtleName[]    = "Turtle ESP";
+  char strTurtleNameUsb[] = "Turtle ESP USB";
+  char strTurtleNameBLE[] = "Turtle ESP BLE";
   char strTurtleManufacturer[] = "Espressif";
 #if defined(CONFIG_BT_BLE_ENABLED)
-  bleMouse = new BleMouse(strTurtleName, strTurtleManufacturer , 100);
+  bleMouse = new BleMouse(strTurtleNameBLE, strTurtleManufacturer , 100);
   bleMouse->begin();
 #endif
 #if defined(CONFIG_TINYUSB_ENABLED)
   UsbMouse.begin();
   USB.manufacturerName(strTurtleManufacturer);
-  USB.productName(strTurtleName);
+  USB.productName(strTurtleNameUsb);
   USB.begin();
 #endif
 #if defined(LED_BUILTIN)
@@ -122,7 +124,7 @@ void setup()
 #if defined(CONFIG_BT_BLE_ENABLED)
   message += " BLE";
 #endif
-
+  message += " ";
 #if defined(ESP8266)
       message += ESP.getChipId();
 #else
@@ -175,8 +177,8 @@ void setup()
       message += " reset_reason: " + reset_reason(rtc_get_reset_reason(0));
 #endif
       message += " ESP_ARDUINO_VERSION: " + String(ESP_ARDUINO_VERSION_MAJOR) + "." + String(ESP_ARDUINO_VERSION_MINOR) + "." + String(ESP_ARDUINO_VERSION_PATCH);
-      message += " Build Date: " + String(__DATE__ " " __TIME__ "\n\r");
-      Serial.print(message);
+      message += " Build Date: " + String(__DATE__ " " __TIME__ );
+      Serial.println(message);
 }
 
 int Seconds;
