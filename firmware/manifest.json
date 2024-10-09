@@ -43,13 +43,19 @@
     {
       "chipFamily": "ESP32-C6",
       "parts": [
-        { "path": "./esp32c6_dio/merged.bin", "offset": 0 }
+        { "path": "./esp32c6_dio/turtle.ino.bootloader.bin", "offset": 0 },
+        { "path": "./esp32c6_dio/turtle.ino.partitions.bin", "offset": 32768 },
+        { "path": "./esp32c6_dio/boot_app0.bin", "offset": 57344 },
+        { "path": "./esp32c6_dio/turtle.ino.bin", "offset": 65536 }
       ]
     },
     {
       "chipFamily": "ESP32-H2",
       "parts": [
-        { "path": "./esp32h2_dio/merged.bin", "offset": 0 }
+        { "path": "./esp32h2_dio/turtle.ino.bootloader.bin", "offset": 0 },
+        { "path": "./esp32h2_dio/turtle.ino.partitions.bin", "offset": 32768 },
+        { "path": "./esp32h2_dio/boot_app0.bin", "offset": 57344 },
+        { "path": "./esp32h2_dio/turtle.ino.bin", "offset": 65536 }
       ]
     }
   ]
