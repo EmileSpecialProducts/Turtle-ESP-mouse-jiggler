@@ -1,3 +1,8 @@
+<p align="center">
+  <a href="https://buymeacoffee.com/emilespecialproducts">
+    <img alt="BuymeaCoffee" src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png">
+  </a>
+</p>
 # Turtle-ESP-mouse-jiggler
 
 Mouse jiggler of the ESP USB and BLE
